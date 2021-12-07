@@ -1,10 +1,10 @@
-# TODO: Run `pip3 install Pillow` before running the code.
+"""Encode and decode images with hidden messages."""
+
 from PIL import Image
 
 def decode_image(path_to_png):
-    """
-    TODO: Add docstring and complete implementation.
-    """
+    """Decodes an image and returns the hidden message."""
+
     # Open the image using PIL:
     encoded_image = Image.open(path_to_png)
 
@@ -23,13 +23,12 @@ def decode_image(path_to_png):
     decoded_image.save("decoded_image.png")
 
 def encode_image(path_to_png):
-    """
-    TODO: Add docstring and complete implementation.
-    """
+    """Encodes an image and returns the hidden message."""
     pass
 
 def write_text(text_to_write):
-    """
-    TODO: Add docstring and complete implementation.
-    """
+    """TODO: Add docstring and complete implementation."""
     pass
+
+if __name__ == "__main__":
+    decode_image("encoded_sample.png")
