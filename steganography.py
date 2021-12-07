@@ -13,14 +13,18 @@ def decode_image(path_to_png):
 
     # Create a new PIL image with the same size as the encoded image:
     decoded_image = Image.new("RGB", encoded_image.size)
-    pixels = decoded_image.load()
+    # pixels = decoded_image.load()
     x_size, y_size = encoded_image.size
 
-    # TODO: Using the variables declared above, replace `print(red_channel)` with a complete implementation:
-    print(red_channel)  # Start coding here!
+    # Decode implementation:
+    for x in range(x_size):
+        for y in range(y_size):
+            pixel_bin = bin(red_channel.getpixel((x, y)))
+            if pixel_bin[-1] == "1":
+                decoded_image.putpixel((x, y), (255, 255, 255))
 
     # DO NOT MODIFY. Save the decoded image to disk:
-    decoded_image.save("decoded_image.png")
+    decoded_image.save("img/decoded_image.png")
 
 def encode_image(path_to_png):
     """Encodes an image and returns the hidden message."""
@@ -31,4 +35,4 @@ def write_text(text_to_write):
     pass
 
 if __name__ == "__main__":
-    decode_image("encoded_sample.png")
+    decode_image("img/encoded_sample.png")
